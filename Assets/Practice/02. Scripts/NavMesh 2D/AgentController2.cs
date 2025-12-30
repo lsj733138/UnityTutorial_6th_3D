@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AgentController : MonoBehaviour
+public class AgentController2 : MonoBehaviour
 {
     private NavMeshAgent agent;
+
     public Transform destination;
 
     private void Start()
