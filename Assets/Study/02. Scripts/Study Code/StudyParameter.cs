@@ -33,4 +33,24 @@ public class StudyParameter : MonoBehaviour
 
       Debug.Log("호출 후 : {number}");
    }
+
+   private void ParamsParameter(params int[] nums)
+   {
+      
+   }
+
+   private void SetActiveGameObject(bool isActive, params GameObject[] objs)
+   {
+      foreach (var obj in objs)
+      {
+         obj.SetActive(isActive);
+      }
+   }
+}
+
+public partial class StudyPartial : MonoBehaviour
+{
+   public int number3;
+   
+   public void MethodC(){}
 }
