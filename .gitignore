@@ -12,6 +12,10 @@
 /.idea/
 /[Uu]ser[Ss]ettings/
 *.log
+Assets/TerrainDemoScene_URP/
+Assets/TerrainDemoScene_URP.meta
+Assets/TerrainSampleAssets/
+Assets/TerrainSampleAssets.meta
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
