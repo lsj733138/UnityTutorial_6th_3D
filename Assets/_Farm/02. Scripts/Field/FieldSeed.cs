@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
 
 namespace Farm
 {
@@ -17,6 +17,9 @@ namespace Farm
         {
             if (Input.GetMouseButtonDown(0) && selectCrop)
             {
+                if (EventSystem.current.IsPointerOverGameObject())
+                    return;
+                
                 Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
