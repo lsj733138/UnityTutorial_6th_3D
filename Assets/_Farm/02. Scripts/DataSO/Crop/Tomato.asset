@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bb271ef526bb343b0f9c1ad09ac742, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
+  fruit: {fileID: 6263277854281917954, guid: c4ff22340995f534fa417b1f6ae4899d, type: 3}
   growthTime: 3
-  macFruitCount: 5
+  maxFruitCount: 4

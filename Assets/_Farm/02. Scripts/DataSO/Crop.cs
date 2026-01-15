@@ -9,7 +9,6 @@ public class Crop : MonoBehaviour
     [SerializeField] private CropData data;
 
     private float growthTime;
-    public bool isHarvest;
 
     private WeatherType currentWeather = WeatherType.Sun;
     private float originGrowthTime; // 기본 성장 시간
@@ -19,7 +18,6 @@ public class Crop : MonoBehaviour
         growthTime = data.growthTime;
         originGrowthTime = data.growthTime;
         
-        isHarvest = false;
         SetState(CropState.Level1);
         WeatherSystem.weatherChanged += SetGrowth;
         
@@ -43,16 +41,14 @@ public class Crop : MonoBehaviour
         
         //Level3로 변경
         SetState(CropState.Level3);
-        
-        isHarvest = true;
     }
 
     private void SetState(CropState newState)
     {
         for (int i = 0; i < transform.childCount; i++)
-        {
             transform.GetChild(i).gameObject.SetActive(i == (int)newState);
-        }
+
+        cropState = newState;
     }
     
     // 날씨 변화에 따른 작물의 성장시간 조절
@@ -78,7 +74,12 @@ public class Crop : MonoBehaviour
         }
 
         currentWeather = weatherType;
-        Debug.Log("성장 속도 변경");
+        //Debug.Log("성장 속도 변경");
     }
-    
+
+    public void SetCropData(out GameObject fruit, out int maxCount)
+    {
+        fruit = data.fruit;
+        maxCount = data.maxFruitCount;
+    }
 }

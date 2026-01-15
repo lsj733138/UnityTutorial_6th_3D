@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveVector; // 움직일 방향
     private Vector3 verticalVelocity;
 
+    [SerializeField] private GameObject inventoryUI;
+    
     private float currSpeed;
     [SerializeField] private float walkSpeed = 3f;
     [SerializeField] private float runSpeed = 6f;
@@ -88,8 +90,6 @@ public class PlayerMovement : MonoBehaviour
         // 아무 키도 누르지 않으면 속도 0 -> Idle
         // WASD를 누르면 속도 3 -> Walk
         // WASD + Shift를 누르면 속도 6 -> Run
-
-        
         
         anim.SetFloat("Speed", currSpeed, 0.1f, Time.deltaTime);
     }
@@ -98,5 +98,15 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 inputDir = value.Get<Vector2>();
         moveInput = new Vector3(inputDir.x, 0f, inputDir.y);
+    }
+
+    private void OnInventory(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            bool isActive = inventoryUI.activeSelf;
+            
+            inventoryUI.SetActive(!isActive);
+        }
     }
 }

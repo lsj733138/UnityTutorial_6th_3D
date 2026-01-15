@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bb271ef526bb343b0f9c1ad09ac742, type: 3}
   m_Name: Corn
   m_EditorClassIdentifier: 
+  fruit: {fileID: 8983483575951448056, guid: 1455c7641a6ead543b2c0e8e7e05eb7f, type: 3}
   growthTime: 4.5
-  macFruitCount: 3
+  maxFruitCount: 3
