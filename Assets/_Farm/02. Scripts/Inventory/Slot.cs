@@ -1,3 +1,4 @@
+using Farm;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -48,6 +49,21 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
         slotButton.interactable = false;
     }
 
+    public void DeleteItem(string itemName)
+    {
+        if (item == null)
+            return;
+        
+        if (item.ItemName == itemName)
+        {
+            item = null;
+            IsEmpty = true;
+            slotImage.gameObject.SetActive(false);
+            slotImage.sprite = null;
+            slotButton.interactable = false;
+        }
+    }
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (IsEmpty)
@@ -80,9 +96,14 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!EventSystem.current.IsPointerOverGameObject()) // 놓은 장소가 UI가 아닐 시
+            DropItemToWorld();
+        
         dragItem.sprite = null;
         dragItem.gameObject.SetActive(false);
         dragSlot = null;
+
+        dragItem.raycastTarget = true;
     }
 
     public void SetItem(IItem newItem)
@@ -102,5 +123,22 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
             slotImage.gameObject.SetActive(true);
             slotButton.interactable = true;
         }
+    }
+
+    private void DropItemToWorld()
+    {
+        if (item == null)
+            return;
+
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10f;
+        Vector3 spawnPos = Camera.main.ScreenToWorldPoint(mousePos); // 마우스 위치를 월드 좌표로 전환
+        GameObject dropItem = PoolManager.Instance.GetObject(item.ItemName);
+        Debug.Log($"{item.ItemName}을 바닥에 버렸습니다.");
+        dropItem.transform.position = spawnPos + Vector3.up * 4f;
+        
+        SetItem(null);
+      
+        
     }
 }

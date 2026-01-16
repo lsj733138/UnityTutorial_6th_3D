@@ -99,14 +99,4 @@ public class PlayerMovement : MonoBehaviour
         Vector2 inputDir = value.Get<Vector2>();
         moveInput = new Vector3(inputDir.x, 0f, inputDir.y);
     }
-
-    private void OnInventory(InputValue value)
-    {
-        if (value.isPressed)
-        {
-            bool isActive = inventoryUI.activeSelf;
-            
-            inventoryUI.SetActive(!isActive);
-        }
-    }
 }
