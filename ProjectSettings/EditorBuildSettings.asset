@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Study/01. Scenes/Pattern/Singleton.unity
-    guid: 1dcc601a5c654a046b80fbacd7435818
+    path: Assets/_Farm/01. Scenes/0. Intro.unity
+    guid: 314797ea00d56e34089d63c8dc0ad641
   - enabled: 1
-    path: Assets/Study/01. Scenes/Study Code.unity
-    guid: 2149bf6bda79c0c4dbf313855ad29011
+    path: Assets/_Farm/01. Scenes/1. Character Select.unity
+    guid: af9aa33d096893448b56d071634f7fdf
+  - enabled: 1
+    path: Assets/_Farm/01. Scenes/2. Main.unity
+    guid: 48fe4be46deb8c84d8169a9c2e2f640b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
