@@ -8,7 +8,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (value.isPressed)
         {
-            UIManager.Instance.InventoryOnOff();
+            GameManager.Instance.UIManager.InventoryOnOff();
         }
     }
 
@@ -17,7 +17,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (value.isPressed)
         {
             Debug.Log(value.isPressed);
-            UIManager.Instance.AllPopUpClose();
+            GameManager.Instance.UIManager.AllPopUpClose();
         }
     }
 }

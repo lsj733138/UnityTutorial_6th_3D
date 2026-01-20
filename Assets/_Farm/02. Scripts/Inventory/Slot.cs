@@ -133,7 +133,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10f;
         Vector3 spawnPos = Camera.main.ScreenToWorldPoint(mousePos); // 마우스 위치를 월드 좌표로 전환
-        GameObject dropItem = PoolManager.Instance.GetObject(item.ItemName);
+        GameObject dropItem = GameManager.Instance.PoolManager.GetObject(item.ItemName);
         Debug.Log($"{item.ItemName}을 바닥에 버렸습니다.");
         dropItem.transform.position = spawnPos + Vector3.up * 4f;
         

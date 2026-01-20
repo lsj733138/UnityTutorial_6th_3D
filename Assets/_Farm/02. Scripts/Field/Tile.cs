@@ -20,7 +20,7 @@ namespace Farm
             if (isCreate)
                 return;
             
-            cropObj = PoolManager.Instance.GetObject(cropPrefab.name);
+            cropObj = GameManager.Instance.PoolManager.GetObject(cropPrefab.name);
             
             cropObj.transform.SetParent(transform);
             cropObj.transform.localPosition = Vector3.zero;
@@ -50,7 +50,7 @@ namespace Farm
             isCreate = false;
 
             string cropName = cropObj.name.Replace("(Clone)", "");
-            PoolManager.Instance.ReleaseObject(cropObj, cropName);
+            GameManager.Instance.PoolManager.ReleaseObject(cropObj, cropName);
             
             StartCoroutine(HarvestRoutine());
         }
@@ -61,7 +61,7 @@ namespace Farm
 
             for (int i = 0; i < randAmount; i++) // 열매 생성
             {
-                GameObject fruitObj = PoolManager.Instance.GetObject(fruitPrefab.name);
+                GameObject fruitObj =GameManager.Instance.PoolManager.GetObject(fruitPrefab.name);
                 
                 fruitObj.transform.position = transform.position + Vector3.up * 0.5f;
                 Rigidbody fruitRb = fruitObj.GetComponent<Rigidbody>();

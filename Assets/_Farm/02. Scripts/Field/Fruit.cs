@@ -27,7 +27,7 @@ namespace Farm
 
         public void Get()
         {
-            PoolManager.Instance.ReleaseObject(gameObject, ItemName);
+            GameManager.Instance.PoolManager.ReleaseObject(gameObject, ItemName);
             
             Debug.Log($"{ItemName} 획득");
             Inven.GetItem(this);

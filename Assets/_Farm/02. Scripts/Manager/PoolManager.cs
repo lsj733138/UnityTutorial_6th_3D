@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 
 namespace Farm
 {
-    public class PoolManager : SingletonCore<PoolManager> // 여러 곳에서 접근하기에 싱글톤으로
+    public class PoolManager :MonoBehaviour // 여러 곳에서 접근하기에 싱글톤으로
     {
         [Serializable]
         public class PoolData
@@ -20,9 +20,9 @@ namespace Farm
 
         public GameObject prefab;
         
-        protected override void Awake()
+       private void Awake()
         {
-            base.Awake();
+          
 
             // Pool을 생성하고 Dictionary에 등록하는 기능
             foreach (var poolData in poolList)
