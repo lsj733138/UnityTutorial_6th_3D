@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "476606699882",
+    "project_id": "hellofirebase-63d64",
+    "storage_bucket": "hellofirebase-63d64.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476606699882:android:8cb4dbf87116c80b152d13",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.UnityTutorial_6th_3D"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaShYTE36mlCBYLE3Sk85MOam617KgQUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

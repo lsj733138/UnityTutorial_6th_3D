@@ -1,21 +1,22 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Farm
 {
     public class DataManager : SingletonCore<DataManager>
     {
-        private int _selectCharacterIndex;
-        public int SelectCharacterIndex
-        {
-            get => _selectCharacterIndex;
-            set
-            {
-                Debug.Log($"선택한 캐릭터는 {value}번째 입니다.");
-                _selectCharacterIndex = value;
-            }
-        }
-        
+        public int SelectCharacterIndex { get; set; }
         public GameObject Player { get; set; }
-        public string UserID { get; set; }
+        public string UserId { get; private set; }
+        public int UserGold { get; private set; }
+
+        private Dictionary<string, bool> MyUnits { get; set; } = new Dictionary<string, bool>();
+
+        public void SetUserData(string id, int gold, Dictionary<string, bool> units)
+        {
+            UserId = id;
+            UserGold = gold;
+            MyUnits = units;
+        }
     }
 }
