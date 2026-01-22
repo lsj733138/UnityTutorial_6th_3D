@@ -36,6 +36,29 @@ namespace Farm
         public void Use()
         {
             Debug.Log($"{ItemName} 사용");
+
+            switch (ItemName)
+            {
+                case "Carrot_Fruit":
+                    DataManager.Instance.SetGold(50);
+                    break;
+                case "Corn_Fruit":
+                    DataManager.Instance.SetGold(20);
+                    break;
+                case "Eggplant_Fruit":
+                    DataManager.Instance.SetGold(30);
+                    break;
+                case "Pumpkin_Fruit":
+                    DataManager.Instance.SetGold(10);
+                    break;
+                case "Tomato_Fruit":
+                    DataManager.Instance.SetGold(10);
+                    break;
+                case "Turnip_Fruit":
+                    DataManager.Instance.SetGold(60);
+                    break;
+                
+            }
         }
     }
 }

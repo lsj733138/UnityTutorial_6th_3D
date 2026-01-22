@@ -87,13 +87,14 @@ namespace Farm
         private void Select()
         {
             DataManager.Instance.SelectCharacterIndex = CharacterIndex; // 현재 선택한 캐릭터 인덱스 저장
+            DataManager.Instance.SetUnitData("unit" + CharacterIndex);
             StartCoroutine(SelectRoutine());
         }
 
         IEnumerator SelectRoutine()
         {
             characterAnims[CharacterIndex].SetTrigger("Dance");
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
 
             FadeEvent.FadeInvoke(3f, Color.black, true);
             yield return new WaitForSeconds(3f);
