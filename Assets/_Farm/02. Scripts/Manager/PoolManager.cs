@@ -13,7 +13,7 @@ namespace Farm
             public string name;
             public GameObject prefab;
         }
-
+        
         public List<PoolData> poolList = new List<PoolData>();
         // 이름으로 풀 검색 기능
         private Dictionary<string, IObjectPool<GameObject>> poolDics = new Dictionary<string, IObjectPool<GameObject>>();
@@ -22,8 +22,6 @@ namespace Farm
         
        private void Awake()
         {
-          
-
             // Pool을 생성하고 Dictionary에 등록하는 기능
             foreach (var poolData in poolList)
             {

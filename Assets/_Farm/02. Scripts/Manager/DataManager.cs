@@ -17,13 +17,15 @@ namespace Farm
         public int UserGold { get; private set; }
         public string UserKey { get; private set; }
         
+        [SerializeField] private string url;
+        
         private Dictionary<string, bool> MyUnits { get; set; } = new Dictionary<string, bool>();
 
         protected override void Awake()
         {
             base.Awake();
 
-            database = FirebaseDatabase.GetInstance("https://hellofirebase-63d64-default-rtdb.firebaseio.com/");
+            database = FirebaseDatabase.GetInstance(url);
             reference = database.RootReference;
         }
 

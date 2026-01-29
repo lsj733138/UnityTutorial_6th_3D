@@ -29,8 +29,8 @@ public class GoogleDataManager : MonoBehaviour
     private FirebaseDatabase database;
     private DatabaseReference reference;
     
-    public string sheetURL = "https://docs.google.com/spreadsheets/d/1CXroTHZlNPuwPIqBNAiFf-N3yga2zsGX8hnzycfUKhE/export?format=csv&range=A2:D5";
-    public string dbURL = "https://hellofirebase-63d64-default-rtdb.firebaseio.com/";
+    public string sheetURL;
+    public string dbURL;
     
     public List<CharacterData> characterDatas = new List<CharacterData>();
 

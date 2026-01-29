@@ -535,6 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5d811c0eef4f288cc8f1fe222b4dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  url: https://hellofirebase-63d64-default-rtdb.firebaseio.com/
 --- !u!4 &561944139
 Transform:
   m_ObjectHideFlags: 0
@@ -1000,7 +1001,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: asdfasdf
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b3a16b64515e684bb8414a7d4e4b1a0, type: 2}
   m_sharedMaterial: {fileID: 7608267504752193338, guid: 4b3a16b64515e684bb8414a7d4e4b1a0, type: 2}

@@ -1320,6 +1320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5d811c0eef4f288cc8f1fe222b4dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  url: https://hellofirebase-63d64-default-rtdb.firebaseio.com/
 --- !u!4 &1049869552
 Transform:
   m_ObjectHideFlags: 0

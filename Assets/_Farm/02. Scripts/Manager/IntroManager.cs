@@ -49,7 +49,7 @@ public class IntroManager : MonoBehaviour
         loginButton.onClick.AddListener(() => LoginUserData().Forget());
     }
 
-    private async UniTaskVoid CreateUserData()
+    private async UniTaskVoid CreateUserData()  
     {
         string id = idInput.text;
         string pw = pwInput.text;
